@@ -1,0 +1,106 @@
+/*
+===================================================================================
+Mixins
+===================================================================================
+*/
+
+// Clearfix for clearing floats like a boss
+.clearfix{
+	zoom: 1;
+
+	&:after {
+		display: block;
+		visibility: hidden;
+		height: 0;
+		clear: both;
+		content: ".";
+	}
+}
+
+// IE7 inline-block
+.ie7-inline-block() {
+  *display: inline; // IE7 inline-block hack
+  *zoom: 1;
+}
+
+// Transitions
+.transition (@property:all, @ms:0.4s, @effect:ease-in-out) {
+	-webkit-transition: @property @ms @effect;
+	   -moz-transition: @property @ms @effect;
+	     -o-transition: @property @ms @effect;
+	    -ms-transition: @property @ms @effect;
+	        transition: @property @ms @effect;
+}
+
+// Border Radius
+.border-radius (@radius: 50%) {
+	-webkit-border-radius: @radius;
+	   -moz-border-radius: @radius;
+	    -ms-border-radius: @radius;
+	     -o-border-radius: @radius;
+	        border-radius: @radius;
+}
+
+
+
+/*
+===================================================================================
+Variable
+===================================================================================
+*/
+
+//  Url pasta das imagens - ex: background: url('@{base-url}bg.png');
+@tease-url: '../../images/tease/' ;
+
+
+//  Background
+@background-verde:  #3ccccc;
+@background-azul:  	#031620;
+
+
+// Hover Background
+@background-azul-hover:  lighten(@background-azul, 10%);
+
+
+//  Cores
+@cor-texto-branco:  #FFFFFF;
+
+
+/*
+===================================================================================
+Animacoes
+===================================================================================
+*/
+
+/* animate */
+.animate(@frame-name, @frame-tempo: 7s, @frame-anime: linear, @frame-delay: 0s, @frame-loop: infinite){
+	-webkit-animation: @frame-name;
+	   -moz-animation: @frame-name;
+	    -ms-animation: @frame-name;
+	     -o-animation: @frame-name;
+	        animation: @frame-name;
+
+	-webkit-animation-duration: @frame-tempo;
+	   -moz-animation-duration: @frame-tempo;
+		-ms-animation-duration: @frame-tempo;
+		 -o-animation-duration: @frame-tempo;
+			animation-duration: @frame-tempo;
+
+    -webkit-animation-timing-function: @frame-anime;
+       -moz-animation-timing-function: @frame-anime;
+    	-ms-animation-timing-function: @frame-anime;
+    	 -o-animation-timing-function: @frame-anime;
+    		animation-timing-function: @frame-anime;
+
+    -webkit-animation-iteration-count: @frame-loop;
+       -moz-animation-iteration-count: @frame-loop;
+    	-ms-animation-iteration-count: @frame-loop;
+    	 -o-animation-iteration-count: @frame-loop;
+    		animation-iteration-count: @frame-loop;
+
+    -webkit-animation-delay: @frame-delay;
+       -moz-animation-delay: @frame-delay;
+    	-ms-animation-delay: @frame-delay;
+    	 -o-animation-delay: @frame-delay;
+    		animation-delay: @frame-delay;  
+}
